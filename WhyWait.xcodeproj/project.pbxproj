@@ -22,6 +22,7 @@
 		4042CFE71B3E6FD9006C54D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFE61B3E6FD9006C54D4 /* SystemConfiguration.framework */; };
 		4042CFEA1B3E7045006C54D4 /* Temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFE91B3E7045006C54D4 /* Temp.m */; };
 		4042CFEC1B3EA313006C54D4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFEB1B3EA313006C54D4 /* InfoView.swift */; };
+		4042CFEE1B3EFEED006C54D4 /* OldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFED1B3EFEED006C54D4 /* OldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4042CFE81B3E7045006C54D4 /* WhyWait-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhyWait-Bridging-Header.h"; sourceTree = "<group>"; };
 		4042CFE91B3E7045006C54D4 /* Temp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Temp.m; sourceTree = "<group>"; };
 		4042CFEB1B3EA313006C54D4 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		4042CFED1B3EFEED006C54D4 /* OldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				4042CFBE1B3E6DC5006C54D4 /* ViewController.swift */,
 				4042CFEB1B3EA313006C54D4 /* InfoView.swift */,
 				4042CFC01B3E6DC5006C54D4 /* Main.storyboard */,
+				4042CFED1B3EFEED006C54D4 /* OldView.swift */,
 				4042CFC31B3E6DC5006C54D4 /* Images.xcassets */,
 				4042CFC51B3E6DC5006C54D4 /* LaunchScreen.xib */,
 				4042CFBB1B3E6DC5006C54D4 /* WhyWait.xcdatamodeld */,
@@ -251,6 +254,7 @@
 				4042CFBA1B3E6DC5006C54D4 /* AppDelegate.swift in Sources */,
 				4042CFBD1B3E6DC5006C54D4 /* WhyWait.xcdatamodeld in Sources */,
 				4042CFEC1B3EA313006C54D4 /* InfoView.swift in Sources */,
+				4042CFEE1B3EFEED006C54D4 /* OldView.swift in Sources */,
 				4042CFEA1B3E7045006C54D4 /* Temp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -385,6 +389,7 @@
 					dev/TestingFirebase,
 				);
 				INFOPLIST_FILE = WhyWait/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +409,7 @@
 					dev/TestingFirebase,
 				);
 				INFOPLIST_FILE = WhyWait/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

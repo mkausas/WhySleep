@@ -8,77 +8,114 @@
 
 import UIKit
 
-var alarms = [String]()
+var alarms : [[AnyObject]] = []
+var currentAlarm = [String]()
+var data = [AnyObject]()
+var length = 0
+var first = 0
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var cellitemcontent:[[AnyObject]] = []
+//
+//        // append to the list
+//        cellitemcontent.append(["Work Alarm", "3 30 0 0 0"])
+//        cellitemcontent.append(["Weekend Alarm", "4 50 0 0 0"])
+//        cellitemcontent.append(["Yoga Alarm", "4 50 0 0 0"])
+//
+//        alarms = []
+//        NSUserDefaults().setObject(cellitemcontent, forKey: "myArray")
+        
+        
+        if first == 0 {
+            let myLoadedArray = NSUserDefaults().arrayForKey("myArray") as? [[AnyObject]] ?? []
+            
+//            println("this is good: \(myLoadedArray[0][0] as! String)")
+//            println("this is also good: \(myLoadedArray[0][1] as! String)")
+//            println("length: \(myLoadedArray.count)")
+//            var splitInto = myLoadedArray[0][1].componentsSeparatedByString(" ")
+//            println("first item \(splitInto[4])")
+            
+            for item in myLoadedArray {
+                alarms.append(item)
+            }
+            
+            println(myLoadedArray)
+            first = 1
+        }
+        
+        
+        var components = [
+            "hour": 5,
+            "minute": 40,
+            "timeofday": 0, // 0 = AM 1 = PM
+            "longcycle": 0,
+            "birdsounds": 0]
+        
+        
         
         // Create a reference to a Firebase location
         var ref = Firebase(url:"https://whysleephackmobile.firebaseio.com")
         var alarmRef = ref.childByAppendingPath("alarms")
         
-        
-        // Write data to Firebase
-//        ref.setValue("Do you have data? You'll love Firebase.")
-        
         var data =
                     [
-                        "alarms": [
-                            "alarm1": [
-                                "timeofday": "3:00",
-                                "repetitions": [
-                                    "days": [
-                                        "monday": false,
-                                        "tuesday": false,
-                                        "wednesday": false,
-                                        "thursday": false,
-                                        "friday": false,
-                                        "saturday": false,
-                                        "sunday": false
-                                    ],
-                                    "weekly": true
-                                ]
-                            ],
-                            "alarm2": [
-                                "timeofday": "3:00",
-                                "repetitions": [
-                                    "days": [
-                                        "monday": false,
-                                        "tuesday": false,
-                                        "wednesday": false,
-                                        "thursday": false,
-                                        "friday": false,
-                                        "saturday": false,
-                                        "sunday": false
-                                    ],
-                                    "weekly": true
-                                ]
-                            ]
-                        ],
-                        
-                        "settings": [
-                            "flux": false
-                        ]
+                        "name": "alarmName",
+                        "hour": 8,
+                        "minutes": 30,
+                        "timeofday": "AM",
+                        "longcycle": 0,
+                        "birdsounds": 0,
+                        "repetition": 0
+//                        "alarms": [
+//                            "alarm1": [
+//                                "timeofday": "3:00",
+//                                "repetitions": [
+//                                    "days": [
+//                                        "monday": false,
+//                                        "tuesday": false,
+//                                        "wednesday": false,
+//                                        "thursday": false,
+//                                        "friday": false,
+//                                        "saturday": false,
+//                                        "sunday": false
+//                                    ],
+//                                    "weekly": true
+//                                ]
+//                            ],
+//                            "alarm2": [
+//                                "timeofday": "3:00",
+//                                "repetitions": [
+//                                    "days": [
+//                                        "monday": false,
+//                                        "tuesday": false,
+//                                        "wednesday": false,
+//                                        "thursday": false,
+//                                        "friday": false,
+//                                        "saturday": false,
+//                                        "sunday": false
+//                                    ],
+//                                    "weekly": true
+//                                ]
+//                            ]
+//                        ],
+//                        
+//                        "settings": [
+//                            "flux": false
+//                        ]
                     ]
         
         ref.setValue(data)
         
-        alarmRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            println("Number of children \(snapshot.childrenCount)")
-            let enumerator = snapshot.children
-            
-            while let alarm = enumerator.nextObject() as? FDataSnapshot {
-//                println("key = \(alarm.key)")
-//                println("value = \(alarm.value)")
-                
-                alarms.append(alarm.key)
-            }
-            
-            self.table.reloadData()
-        })
+//        length = 0
+//        table.reloadData()
+//        length = alarms.count
+//        table.reloadData()
     }
     
     
@@ -89,14 +126,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
         var cell : UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "alarmCell")
-        cell.textLabel?.text = alarms[indexPath.row]
+        cell.textLabel?.text = alarms[indexPath.row][0] as? String
         
         return cell
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        println("selected \(indexPath.row)")
         performSegueWithIdentifier("toInfoView", sender: nil)
     }
 
@@ -104,7 +140,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
