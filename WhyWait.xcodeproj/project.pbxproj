@@ -14,7 +14,6 @@
 		4042CFC41B3E6DC5006C54D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4042CFC31B3E6DC5006C54D4 /* Images.xcassets */; };
 		4042CFC71B3E6DC5006C54D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4042CFC51B3E6DC5006C54D4 /* LaunchScreen.xib */; };
 		4042CFD31B3E6DC5006C54D4 /* WhyWaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFD21B3E6DC5006C54D4 /* WhyWaitTests.swift */; };
-		4042CFDD1B3E6EB6006C54D4 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFDC1B3E6EB6006C54D4 /* Firebase.framework */; };
 		4042CFDF1B3E6FB5006C54D4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFDE1B3E6FB5006C54D4 /* libicucore.dylib */; };
 		4042CFE11B3E6FBE006C54D4 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFE01B3E6FBE006C54D4 /* libc++.dylib */; };
 		4042CFE31B3E6FC6006C54D4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFE21B3E6FC6006C54D4 /* CFNetwork.framework */; };
@@ -22,6 +21,7 @@
 		4042CFE71B3E6FD9006C54D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4042CFE61B3E6FD9006C54D4 /* SystemConfiguration.framework */; };
 		4042CFEA1B3E7045006C54D4 /* Temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFE91B3E7045006C54D4 /* Temp.m */; };
 		4042CFEC1B3EA313006C54D4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042CFEB1B3EA313006C54D4 /* InfoView.swift */; };
+		40CBCC081B3F1DD500230B92 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CBCC071B3F1DD500230B92 /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		4042CFCC1B3E6DC5006C54D4 /* WhyWaitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyWaitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4042CFD11B3E6DC5006C54D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4042CFD21B3E6DC5006C54D4 /* WhyWaitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyWaitTests.swift; sourceTree = "<group>"; };
-		4042CFDC1B3E6EB6006C54D4 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../TestingFirebase/Firebase.framework; sourceTree = "<group>"; };
 		4042CFDE1B3E6FB5006C54D4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		4042CFE01B3E6FBE006C54D4 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		4042CFE21B3E6FC6006C54D4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -55,6 +54,7 @@
 		4042CFE81B3E7045006C54D4 /* WhyWait-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhyWait-Bridging-Header.h"; sourceTree = "<group>"; };
 		4042CFE91B3E7045006C54D4 /* Temp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Temp.m; sourceTree = "<group>"; };
 		4042CFEB1B3EA313006C54D4 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		40CBCC071B3F1DD500230B92 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +62,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CBCC081B3F1DD500230B92 /* Firebase.framework in Frameworks */,
 				4042CFE71B3E6FD9006C54D4 /* SystemConfiguration.framework in Frameworks */,
 				4042CFE51B3E6FD0006C54D4 /* Security.framework in Frameworks */,
 				4042CFE31B3E6FC6006C54D4 /* CFNetwork.framework in Frameworks */,
 				4042CFE11B3E6FBE006C54D4 /* libc++.dylib in Frameworks */,
 				4042CFDF1B3E6FB5006C54D4 /* libicucore.dylib in Frameworks */,
-				4042CFDD1B3E6EB6006C54D4 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,13 +84,13 @@
 		4042CFAB1B3E6DC5006C54D4 = {
 			isa = PBXGroup;
 			children = (
+				40CBCC071B3F1DD500230B92 /* Firebase.framework */,
 				4042CFE91B3E7045006C54D4 /* Temp.m */,
 				4042CFE61B3E6FD9006C54D4 /* SystemConfiguration.framework */,
 				4042CFE41B3E6FD0006C54D4 /* Security.framework */,
 				4042CFE21B3E6FC6006C54D4 /* CFNetwork.framework */,
 				4042CFE01B3E6FBE006C54D4 /* libc++.dylib */,
 				4042CFDE1B3E6FB5006C54D4 /* libicucore.dylib */,
-				4042CFDC1B3E6EB6006C54D4 /* Firebase.framework */,
 				4042CFB61B3E6DC5006C54D4 /* WhyWait */,
 				4042CFCF1B3E6DC5006C54D4 /* WhyWaitTests */,
 				4042CFB51B3E6DC5006C54D4 /* Products */,
@@ -111,12 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				4042CFB91B3E6DC5006C54D4 /* AppDelegate.swift */,
+				4042CFBB1B3E6DC5006C54D4 /* WhyWait.xcdatamodeld */,
 				4042CFBE1B3E6DC5006C54D4 /* ViewController.swift */,
 				4042CFEB1B3EA313006C54D4 /* InfoView.swift */,
 				4042CFC01B3E6DC5006C54D4 /* Main.storyboard */,
 				4042CFC31B3E6DC5006C54D4 /* Images.xcassets */,
 				4042CFC51B3E6DC5006C54D4 /* LaunchScreen.xib */,
-				4042CFBB1B3E6DC5006C54D4 /* WhyWait.xcdatamodeld */,
 				4042CFB71B3E6DC5006C54D4 /* Supporting Files */,
 			);
 			path = WhyWait;
@@ -329,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -383,12 +383,14 @@
 					"$(inherited)",
 					/Users/Marty/Documents/Programming/swift,
 					dev/TestingFirebase,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WhyWait/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "WhyWait-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -403,12 +405,14 @@
 					"$(inherited)",
 					/Users/Marty/Documents/Programming/swift,
 					dev/TestingFirebase,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WhyWait/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "WhyWait-Bridging-Header.h";
 			};
 			name = Release;
@@ -466,6 +470,7 @@
 				4042CFD81B3E6DC5006C54D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4042CFD91B3E6DC5006C54D4 /* Build configuration list for PBXNativeTarget "WhyWaitTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +479,7 @@
 				4042CFDB1B3E6DC5006C54D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

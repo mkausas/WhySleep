@@ -24,13 +24,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var cellitemcontent:[[AnyObject]] = []
-//
-//        // append to the list
-//        cellitemcontent.append(["Work Alarm", "3 30 0 0 0"])
-//        cellitemcontent.append(["Weekend Alarm", "4 50 0 0 0"])
-//        cellitemcontent.append(["Yoga Alarm", "4 50 0 0 0"])
-//        NSUserDefaults().setObject(cellitemcontent, forKey: "myArray")
+        var cellitemcontent:[[AnyObject]] = []
+
+        // append to the list
+        cellitemcontent.append(["Work Alarm", "3 30 0 0 0"])
+        cellitemcontent.append(["Weekend Alarm", "4 50 0 0 0"])
+        cellitemcontent.append(["Yoga Alarm", "4 50 0 0 0"])
+        NSUserDefaults().setObject(cellitemcontent, forKey: "myArray")
         
 //        alarms = []
 //        NSUserDefaults().setObject(alarms, forKey: "myArray")
@@ -58,15 +58,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Create a reference to a Firebase location
         var ref = Firebase(url:"https://whysleephackmobile.firebaseio.com")
         
-        var data =
-                    [
-                        "name": "alarmName",
-                        "hour": 8,
-                        "minutes": 30,
-                        "timeofday": 0,
-                        "longcycle": 0,
-                        "birdsounds": 0,
-                        "repetition": 0
+//        var data =
+//                    [
+//                        "name": "alarmName",
+//                        "hour": 8,
+//                        "minutes": 30,
+//                        "timeofday": 0,
+//                        "longcycle": 0,
+//                        "birdsounds": 0,
+//                        "repetition": 0
 //                        "alarms": [
 //                            "alarm1": [
 //                                "timeofday": "3:00",
@@ -103,10 +103,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //                        "settings": [
 //                            "flux": false
 //                        ]
-                    ]
+//                    ]
         
-        println("setting new fb value: \(currentAlarm)")
-        ref.setValue(currentAlarm)
+        var x = [
+                                    "name": currentAlarm[0],
+                                    "hour": currentAlarm[1],
+                                    "minutes": currentAlarm[2],
+                                    "timeofday": currentAlarm[3],
+                                    "longcycle": currentAlarm[4],
+                                    "birdsounds": currentAlarm[5]   ]
+        println("setting new fb value: \(x)")
+
+        ref.setValue(x)
         
 //        length = 0
 //        table.reloadData()

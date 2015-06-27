@@ -10,31 +10,31 @@
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>69EFC8817277DFF34430DDB45B72E69D54B5B56F</key>
-		<string>https://github.com/mkausas/Learning-Swift.git</string>
+		<key>47555F50549B2451A36AA9F3023930A575FB7388</key>
+		<string>https://github.com/mkausas/WhySleep.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WhyWait/WhyWait.xcodeproj/project.xcworkspace</string>
+	<string>WhyWait.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>69EFC8817277DFF34430DDB45B72E69D54B5B56F</key>
-		<string>../../..</string>
+		<key>47555F50549B2451A36AA9F3023930A575FB7388</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/mkausas/Learning-Swift.git</string>
+	<string>https://github.com/mkausas/WhySleep.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>69EFC8817277DFF34430DDB45B72E69D54B5B56F</string>
+	<string>47555F50549B2451A36AA9F3023930A575FB7388</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>69EFC8817277DFF34430DDB45B72E69D54B5B56F</string>
+			<string>47555F50549B2451A36AA9F3023930A575FB7388</string>
 			<key>IDESourceControlWCCName</key>
-			<string>swift%20dev</string>
+			<string>WhyWait</string>
 		</dict>
 	</array>
 </dict>
