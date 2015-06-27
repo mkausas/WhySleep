@@ -9,10 +9,13 @@
 import UIKit
 
 var alarms : [[AnyObject]] = []
-var currentAlarm = [String]()
-var data = [AnyObject]()
+var currentAlarm = ["",1,1,0,0,0]
+var selectAlarm = [String]()
+var components = [String]()
 var length = 0
 var first = 0
+var selected : Int?
+var enabled : Int?
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -27,10 +30,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cellitemcontent.append(["Work Alarm", "3 30 0 0 0"])
 //        cellitemcontent.append(["Weekend Alarm", "4 50 0 0 0"])
 //        cellitemcontent.append(["Yoga Alarm", "4 50 0 0 0"])
-//
-//        alarms = []
 //        NSUserDefaults().setObject(cellitemcontent, forKey: "myArray")
         
+//        alarms = []
+//        NSUserDefaults().setObject(alarms, forKey: "myArray")
         
         if first == 0 {
             let myLoadedArray = NSUserDefaults().arrayForKey("myArray") as? [[AnyObject]] ?? []
@@ -48,27 +51,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             println(myLoadedArray)
             first = 1
         }
-        
-        
-        var components = [
-            "hour": 5,
-            "minute": 40,
-            "timeofday": 0, // 0 = AM 1 = PM
-            "longcycle": 0,
-            "birdsounds": 0]
+    
         
         
         
         // Create a reference to a Firebase location
         var ref = Firebase(url:"https://whysleephackmobile.firebaseio.com")
-        var alarmRef = ref.childByAppendingPath("alarms")
         
         var data =
                     [
                         "name": "alarmName",
                         "hour": 8,
                         "minutes": 30,
-                        "timeofday": "AM",
+                        "timeofday": 0,
                         "longcycle": 0,
                         "birdsounds": 0,
                         "repetition": 0
@@ -110,14 +105,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //                        ]
                     ]
         
-        ref.setValue(data)
+        println("setting new fb value: \(currentAlarm)")
+        ref.setValue(currentAlarm)
         
 //        length = 0
 //        table.reloadData()
 //        length = alarms.count
 //        table.reloadData()
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarms.count
@@ -134,6 +129,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("toInfoView", sender: nil)
+    }
+
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        println("Index path: \(indexPath.row)")
+        selectAlarm = [alarms[indexPath.row][0] as! String, alarms[indexPath.row][1] as! String]
+        println("selected \(selectAlarm)")
+        
+        performSegueWithIdentifier("toInfoView", sender: nil)
+        return nil
     }
 
 

@@ -14,15 +14,25 @@ class InfoView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var textField: UITextField!
     
-    
     @IBOutlet weak var switchOne: UISwitch!
     @IBOutlet weak var switchTwo: UISwitch!
     @IBOutlet weak var switchThree: UISwitch!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField.delegate = self
+        
+        textField.text = selectAlarm[0]
+        
+        // Setting up a date since I don't have a UIDatePicker
+        var values = selectAlarm[1].componentsSeparatedByString(" ")
+
+        let dateString = "07:25"
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+        
+        var wakeupTime: NSDate = dateFormatter.dateFromString(dateString)!
+//        timePicker.setDate(, animated: Bool)
     }
 
     @IBAction func finishHandler(sender: AnyObject) {
@@ -50,10 +60,13 @@ class InfoView: UIViewController, UITextFieldDelegate {
         var switchTwoVal = switchTwo.on ? 0 : 1
         var switchThreeVal = switchThree.on ? 0 : 1
         println("\(name) \(hour) \(minutes) \(switchOneVal) \(switchTwoVal) \(switchThreeVal)")
-        alarms.append(["\(name)", "\(hour) \(minutes) \(switchOneVal) \(switchTwoVal) \(switchThreeVal)"])
-
-        NSUserDefaults().setObject(alarms, forKey: "myArray")
+        if !name.isEmpty {
+            alarms.append([name, "\(hour) \(minutes) \(switchOneVal) \(switchTwoVal) \(switchThreeVal)"])
+            currentAlarm = [name, hour, minutes, switchOneVal, switchTwoVal, switchThreeVal]
         
+            
+            NSUserDefaults().setObject(alarms, forKey: "myArray")
+        }
         performSegueWithIdentifier("toMainView", sender: nil)
 
         
